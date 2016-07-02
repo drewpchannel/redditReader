@@ -8,11 +8,13 @@ function openInformation () {
     this.dataset.isOpen = true;
     this.appendChild(y);
     var k = document.createElement('div');
-
     this.appendChild(k);
+    console.log('the click has triggered opening fx');
+
   } else if (this.dataset.isOpen === 'true'){
     this.style.height = '40px';
     this.dataset.isOpen = false;
-    this.removeChild(this.childNodes[1]);
+    this.removeChild(this.childNodes[1]);  //  The issue seems to be here...
+    console.log('the click has triggered closing fx');
   }
 }
