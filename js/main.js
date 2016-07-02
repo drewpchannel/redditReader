@@ -7,7 +7,6 @@ function createTitleBar (redditData) {
     y.addEventListener("click", openInformation);
     if (redditData[i].data.preview !== undefined) {
       y.dataset.imageURL = redditData[i].data.preview.images[0].resolutions[0].url;
-      y.dataset.imageHeight = redditData[i].data.preview.images[0].resolutions[0].height;
     }
     y.dataset.isOpen = false;
     x.appendChild(y);
@@ -16,13 +15,13 @@ function createTitleBar (redditData) {
 
 function openInformation (redditData) {
   if (this.dataset.isOpen === 'false'){
+    this.style.height = "140px";
     var y = document.createElement('div');
-    y.innerHTML = "<img src=\"" +  this.dataset.imageURL + "\" />";
+    y.innerHTML = "<img src=\"" +  this.dataset.imageURL + "\" height=\"100px\" width=\"200px\" />";
     y.className = 'previewImage';
     y.id = "image";
     this.dataset.isOpen = true;
     this.appendChild(y);
-    this.style.height = this.dataset.imageHeight;
   } else if (this.dataset.isOpen === 'true'){
     this.style.height = '40px';
     this.dataset.isOpen = false;
