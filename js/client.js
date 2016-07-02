@@ -8,4 +8,3 @@ function reqListener () {
 oReq.addEventListener("load", reqListener);
 oReq.open("GET", "https://www.reddit.com/r/" + userIn + ".json");
 oReq.send();
-
