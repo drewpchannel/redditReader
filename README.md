@@ -3,5 +3,7 @@
 // save searched reddit
 // correct image sizes?
 
+// add header
+
 // q how to fix scrolling to not be weird
 // q how many JS files
